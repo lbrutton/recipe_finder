@@ -2,11 +2,36 @@
 @import "bootstrap";
 
 body{
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	text-align: center;
+	font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 .food-search{
-	width: 50%;
-	padding-bottom: 10px
+    padding-right: 20%;
+    padding-left: 20%;
+    padding-bottom: 30px;
+    border:.5px;
 }
 
+.form-at-top{
+	position: center;
+}
+
+.food-table{
+	border:.5px;
+	width:100%;
+}
+
+.food-box{
+	padding-right: 15%;
+    padding-left: 15%;
+}
+
+th{
+	text-align: center;
+	font-weight: normal;
+}
+
+.thumbnail{
+	width: 300px;
+}

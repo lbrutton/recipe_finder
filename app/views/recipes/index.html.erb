@@ -4,26 +4,29 @@
 <div class="container">
 <%= form_tag('/', method: 'get') do %>
 <div class="input-group food-search">
-  <%= text_field_tag :search, params[:Search], placeholder: "Get yo food.", class: "form-control"%>
+  <%= text_field_tag :search, params[:search], placeholder: "Get yo food.", class: "form-control"%>
   <span class="input-group-btn">
-    <%= submit_tag 'Go.', class: 'btn btn-default' %>
+    <%= submit_tag('Go.', class: 'btn btn-default') %>
     <% end %>
   </span>
 </div>
-	<table border = "1">
+</div>
+<div class="food-box">
+	<table border=".5" class="food-table">
 	<tr>
 	<th>Thumbnail</th>
 	<th>Title</th>
-	<th>Social rank</th>
+	<th>How much do you want to eat this, out of 100</th>
 	</tr>
 	<% @recipes.each do |recipe| %>
 	<tr>
 	<% title = sanitize recipe["title"] %>
-	<td><%= link_to image_tag(recipe["image_url"], size:"100x100"), recipe["source_url"] %></td>
+	<td><%= link_to image_tag(recipe["image_url"], class:"thumbnail"), recipe["source_url"] %></td>
 	<td><%= link_to title, recipe["source_url	"] %></td>
-	<td><%= recipe["social_rank"] %></td>
+	<td><%= recipe["social_rank"].round(2) %></td>
 	<% end %>
 	</tr>
 	</table>
+</div>
 </div>
 
