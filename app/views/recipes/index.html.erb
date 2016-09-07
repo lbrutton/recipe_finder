@@ -1,14 +1,29 @@
-<table border = "1">
-<tr>
-<th>Thumbnail</th>
-<th>Title</th>
-<th>Social rank</th>
-</tr>
-<% @recipes.each do |recipe| %>
-<tr>
-<% title = sanitize recipe["title"] %>
-<td><%= link_to image_tag(recipe["image_url"], size:"100x100"), recipe["source_url"] %></td>
-<td><%= link_to title, recipe["source_url	"] %></td>
-<td><%= recipe["social_rank"] %></td>
-<% end %>
-</tr>
+<div class="page-header text-center">
+	<h1>Tight recipes, yo.</h1>
+</div>
+<div class="container">
+<%= form_tag('/', method: 'get') do %>
+<div class="input-group food-search">
+  <%= text_field_tag :search, params[:Search], placeholder: "Get yo food.", class: "form-control"%>
+  <span class="input-group-btn">
+    <%= submit_tag 'Go.', class: 'btn btn-default' %>
+    <% end %>
+  </span>
+</div>
+	<table border = "1">
+	<tr>
+	<th>Thumbnail</th>
+	<th>Title</th>
+	<th>Social rank</th>
+	</tr>
+	<% @recipes.each do |recipe| %>
+	<tr>
+	<% title = sanitize recipe["title"] %>
+	<td><%= link_to image_tag(recipe["image_url"], size:"100x100"), recipe["source_url"] %></td>
+	<td><%= link_to title, recipe["source_url	"] %></td>
+	<td><%= recipe["social_rank"] %></td>
+	<% end %>
+	</tr>
+	</table>
+</div>
+
