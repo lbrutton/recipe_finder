@@ -16,13 +16,13 @@
 	<tr>
 	<th>Thucking Thumbnail</th>
 	<th>Ladies and Gentlemen!</th>
-	<th>How much do you want to eat this, out of 100:</th>
+	<th>How much you want to eat this, out of 100:</th>
 	</tr>
 	<% @recipes.each do |recipe| %>
 	<tr>
 	<% title = sanitize recipe["title"] %>
 	<td><%= link_to image_tag(recipe["image_url"], class:"thumbnail"), recipe["source_url"] %></td>
-	<td><%= link_to title, recipe["source_url	"] %></td>
+	<td><%= link_to title, recipe["source_url"] %></td>
 	<td><%= recipe["social_rank"].round(2) %></td>
 	<% end %>
 	</tr>
